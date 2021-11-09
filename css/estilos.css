@@ -5,48 +5,41 @@
 }
 body {
     font-family: 'Roboto Condensed', sans-serif;
-    background: #456;
-}
-.menu__a {
-    text-decoration: none;
+    background: #111;
 }
 .logo {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100px;
-    background: #576574;
+    background: #333;
     color: #fff;
 }
 .logo__titulo {
     font-weight: normal;
 }
-#check {
+.header__uno, .header__dos {
     display: none;
-}
-.logo__abrir {
+    color: #fff;
     font-size: 36px;
+    padding: 0 15px;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 4px;
 }
-.menu__a {
+.menu__link {
     color: #fff;
     font-size: 20px;
     font-weight: normal;
-    padding: 0 10px;
+    padding: 20px;
     transition: .5s;
+    text-decoration: none;
 }
-.menu__a:hover {
+.menu__link:hover {
     background: rgba(0,0,0,.6);
+    border-radius: 16px;
 }
-.logo__abrir,
-.menu__cerrar {
-    font-size: 48px;
-    cursor: pointer;
-    transition: .5s;
-    display: none;
-}
-.logo__abrir {
-    order: 1;
-}
+
 .banner {
     padding: 0 50px;
     background-image: url(../img/bg5.jpg);
@@ -101,7 +94,7 @@ body {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    background: #354352;
+    background: #444;
 }
 .personas__imagen {
     border: 7px solid #fff;
@@ -123,7 +116,7 @@ body {
 }
 
 .iconos {
-    background: #576574;
+    background: #555;
     padding: 50px 50px;
 }
 .iconoss {
@@ -145,7 +138,7 @@ body {
     text-align: center;
 }
 .contacto {
-    background: #354352;
+    background: #444;
     color: #fff;
     width: min(600px, 100%);
     margin: 0 auto;
@@ -181,7 +174,7 @@ body {
 }
 .campo__input {
     display: block;
-    background: #243241;
+    background: #222;
     color: #fff;
     font-weight: normal;
     font-size: 16px;
@@ -202,7 +195,7 @@ body {
 }
 .campo__textarea {
     display: block;
-    background: #243241;
+    background: #222;
     color: #000;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
@@ -228,7 +221,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #576574;
+    background: #333;
     color: #fff;
     font-size: 32px;
     padding: 10px;
@@ -237,34 +230,30 @@ body {
     width: 36px;
 }
 @media (max-width: 600px) {
-    .logo__abrir,
-    .menu__cerrar {
-        display: block;
+    .header__uno, .header__dos {
+        display: inline-block;
     }
     .menu {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: rgba(87,101,116,.8);
-        margin: 0;
-        transform: scale(0);
-        top: 0;
-        text-align: center;
-        padding: 100px 0;
-        z-index: 100;
-        transition: .5s;
-        transform-origin: 0 0;
-    }
-    .menu__a {
-        display: block;
-        padding: 20px;
-    }
-    .menu__cerrar {
         position: absolute;
-        top: 40px;
-        right: 40px;
+        top: 110px;
+        left: 80px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        height: 60vh;
+        background: #333;
+        border-radius: 16px;
+        transform: scale(0); 
+        transition: .5s;
+        transform-origin: 0 0; 
     }
-    #check:checked ~ .menu {
+    .menu__link:nth-child(1) {
+        margin-top: 50px;
+    }
+    
+    .menu:target {
         transform: scale(1);
     }
     .personas {
